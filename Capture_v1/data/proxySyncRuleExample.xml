@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sipder>
+    <task>
+        <title><![CDATA[爬虫数据同步任务]]></title>
+        <mode><![CDATA[2]]></mode>
+    </task>
+    <requests>
+    </requests>
+    <proxys>
+    </proxys>
+    <urls>
+    </urls>
+    <!--抓取范围-->
+    <capture>
+    </capture>
+    <resource>
+        <!--同步的资源-->
+        <sync><![CDATA[product]]></sync>
+        <sync><![CDATA[keyword]]></sync>
+        <sync><![CDATA[category]]></sync>
+        <sync><![CDATA[variant]]></sync>
+        <sync><![CDATA[proxy_ip]]></sync>
+    </resource>
+
+</sipder>
+

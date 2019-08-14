@@ -1,0 +1,2 @@
+webpackJsonp([22],{WELC:function(n,t,o){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var e=o("Dd8w"),i=o.n(e),c={INIT_CONFIG:function(n,t){n.localConfig=i()({},t)}};t.default={state:{localConfig:[2]},getters:{getConfig:function(n){return n.localConfig||null}},mutations:c,actions:{init:function(n,t){n.commit("INIT_CONFIG",t)}}}}});
+//# sourceMappingURL=22.js.map

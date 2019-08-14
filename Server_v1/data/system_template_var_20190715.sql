@@ -1,0 +1,2 @@
+INSERT INTO "system_template_var"("id", "created_at", "updated_at", "creator_id", "status", "sort", "name", "code", "type", "scope", "message_type", "is_custom", "value") VALUES (1, '2019-07-15 09:26:23.459+00', '2019-07-15 09:26:52.104+00', 1, 1, 0, 'now', 'now', 1, 1, '', 'f', '');
+INSERT INTO "system_template_var"("id", "created_at", "updated_at", "creator_id", "status", "sort", "name", "code", "type", "scope", "message_type", "is_custom", "value") VALUES (2, '2019-07-15 09:27:50.32+00', '2019-07-15 09:29:04.533+00', 1, 1, 0, 'sender', 'sender', 1, 1, '', 't', 'Admin');

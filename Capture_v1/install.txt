@@ -1,0 +1,9 @@
+pip install scrapy
+pip install scrapyd
+pip install scrapyd-mongodb
+
+注：
+1、端口从6800改为5500
+2、启动scrapyd方法：在项目根路径下执行 scrapyd （生产环境需要在系统后台启动）
+3、执行Job方法：curl http://localhost:5500/schedule.json -d project=default -d spider=TestSpider -d task_code=xxx -d rule_code=xxx -d rule=xxx
+4、公网爬虫测试站：http://47.107.49.215:5500/

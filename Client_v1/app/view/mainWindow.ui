@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1019</width>
+    <height>617</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>NEWAIM Amazon Analysis</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resource/icons.qrc">
+    <normaloff>:/icons/images/winlogo.png</normaloff>:/icons/images/winlogo.png</iconset>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="documentMode">
+   <bool>true</bool>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
+  </property>
+  <widget class="QWidget" name="widget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <property name="spacing">
+     <number>3</number>
+    </property>
+    <property name="leftMargin">
+     <number>1</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="mainTabs">
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1019</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSystem">
+    <property name="statusTip">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>System</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>true</bool>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>false</bool>
+    </property>
+    <addaction name="actionDashboard"/>
+    <addaction name="actionSetting"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionHelp"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Amazon</string>
+    </property>
+    <widget class="QMenu" name="menuKeywords">
+     <property name="title">
+      <string>Keywords</string>
+     </property>
+     <addaction name="actionKeywords_List"/>
+     <addaction name="actionAmazon_Category_Relation"/>
+    </widget>
+    <addaction name="actionBusinessReport"/>
+    <addaction name="actionProductList"/>
+    <addaction name="actionCategories"/>
+    <addaction name="actionProduct_And_Category_Relationship"/>
+    <addaction name="menuKeywords"/>
+   </widget>
+   <widget class="QMenu" name="menuCharts">
+    <property name="title">
+     <string>Charts</string>
+    </property>
+    <addaction name="actionChartsBusinessReport"/>
+   </widget>
+   <addaction name="menuSystem"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuCharts"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionSetting">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/cogs-solid.svg</normaloff>:/button/images/svg/cogs-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Configuration</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/sign-out-alt-solid.svg</normaloff>:/button/images/svg/sign-out-alt-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/lightbulb-solid.svg</normaloff>:/button/images/svg/lightbulb-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+A</string>
+   </property>
+  </action>
+  <action name="actionBusinessReport">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Business Report</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionProductList">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Product List</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionCategories">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Category List</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionDashboard">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/tachometer-alt-solid.svg</normaloff>:/button/images/svg/tachometer-alt-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Dashboard</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionChartsBusinessReport">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/chart-line-solid.svg</normaloff>:/button/images/svg/chart-line-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Business Report</string>
+   </property>
+  </action>
+  <action name="actionProduct_Line">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Product Line</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionCategory_List">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Category List</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionKeywords_List">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Keywords List</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionProduct_Category_Relation">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Product Category Relation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionProduct_And_Category_Relationship">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Product Category Relation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionAmazon_Keyword_Relation">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Amazon Product Relation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionAmazon_Category_Relation">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/file-csv-solid.svg</normaloff>:/button/images/svg/file-csv-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Amazon Category Relation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="icon">
+    <iconset resource="../resource/icons.qrc">
+     <normaloff>:/button/images/svg/exclamation-circle-solid.svg</normaloff>:/button/images/svg/exclamation-circle-solid.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../resource/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,4 @@
+[2019-06-27 14:33:52,313]-INFO: FATAL:  password authentication failed for user "amazon_analysis"
+
+[2019-06-27 14:53:25,339]-INFO: could not translate host name "127.0.0.1:8081" to address: Unknown server error
+

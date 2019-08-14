@@ -1,0 +1,59 @@
+
+/**
+QLineEdit {
+    color: green;
+}
+
+QLineEdit {
+    font-weight: bold;
+}
+**/
+QLabel {
+  color: #333;
+}
+
+QLabel::leMessage {
+  color: rgb(255, 0, 0);
+}
+
+QPushButton {
+  color: #333;
+}
+
+QTabBar::tab{
+    min-height:25px;
+}
+
+QTabBar::tab:selected{
+	color:green;
+}
+
+QStatusBar{
+    color: #999
+}
+
+QMenu{
+    background-color: #EAEAEA;
+    border: 1px solid rgb(125, 125, 125); /*整个菜单区域的边框粗细、样式、颜色*/
+    border-radius: 5px;
+}
+QMenu::item {
+    padding:5px 20px;/*设置菜单项文字上下和左右的内边距，效果就是菜单中的条目左右上下有了间隔*/
+    margin:5px 10px;/*设置菜单项的外边距: 长(height) 宽(width)*/
+    border-radius: 5px;
+}
+QMenu::item:selected {
+    background-color: #D0D0D0;
+    border-radius: 3px;
+    color: blue;
+    font-weight: bold;
+    cursor: pointer
+}
+
+QLine{
+  border: 2px;
+}
+
+QToolButton{
+
+}

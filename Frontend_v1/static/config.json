@@ -1,0 +1,128 @@
+{
+  "server": {
+    "api": {
+      "host": "http://192.168.2.102/api",
+      "auth": {
+        "username": "admin",
+        "password": "admin"
+      }
+    }
+  },
+  "lang": "zh",
+  "system": {
+    "query": {
+      "page": 1,
+      "pageSize": 500
+    },
+    "router": {
+      "pages": [
+        {
+          "path": "reportskuuv",
+          "name": "report_sku_uv",
+          "title": "SKU U/V",
+          "component_name": "chartSkuUvChart",
+          "series": "sku"
+        },
+        {
+          "path": "reportskupv",
+          "name": "report_sku_pv",
+          "title": "SKU P/V",
+          "component_name": "chartSkuPvChart",
+          "series": "sku"
+        },
+        {
+          "path": "reportskutotalorder",
+          "name": "report_sku_total_order",
+          "title": "SKU Total Order Items",
+          "component_name": "chartSkuTotalOrderChart",
+          "series": "sku"
+        },
+        {
+          "path": "reportskubuyboxper",
+          "name": "report_sku_buy_box_per",
+          "title": "Sku Buy Box Per.",
+          "component_name": "chartSkuBuyBoxPerChart",
+          "series": "sku"
+        },
+
+        {
+          "path": "statamazonskucompositereport",
+          "name": "report_sku_composite",
+          "title": "SKU Composite Report",
+          "component_name": "chartSkuCompositeReportChart",
+          "series": "sku"
+        },
+        {
+          "path": "statamazonkeyword",
+          "name": "report_sku_keyword",
+          "title": "SKU Keyword Report",
+          "component_name": "chartSkuKeywordReportChart",
+          "series": "sku"
+        },
+        {
+          "path": "statamazonskureviewrank",
+          "name": "report_sku_review_rank",
+          "title": "SKU Review Rank Report",
+          "component_name": "chartSkuReviewRankReportChart",
+          "series": "sku",
+          "disabled": true
+        },
+        {
+          "path": "statamazonskupricelog",
+          "name": "report_sku_price_log",
+          "title": "SKU Price Log Report",
+          "component_name": "chartSkuPriceLogReportChart",
+          "series": "sku",
+          "disabled": true
+        },
+        {
+          "path": "reportlinetotalorder",
+          "name": "report_line_total_order",
+          "title": "LINE Total Order Items",
+          "component_name": "chartLineTotalOrderChart",
+          "series": "product_line"
+        },
+        {
+          "path": "reportlineuv",
+          "name": "report_line_uv",
+          "title": "LINE U/V",
+          "component_name": "chartLineUvChart",
+          "series": "product_line"
+        },
+        {
+          "path": "reportlinepv",
+          "name": "report_line_pv",
+          "title": "LINE P/V",
+          "component_name": "chartLinePvChart",
+          "series": "product_line"
+        },
+        {
+          "path": "reportlineuserconversionrate",
+          "name": "report_line_user_conversion_rate",
+          "title": "LINE User Conversion Rate",
+          "component_name": "chartLineUserConversionRateChart",
+          "series": "product_line"
+        },
+        {
+          "path": "statamazonbestseller",
+          "name": "report_best_seller",
+          "title": "Best Seller Report",
+          "component_name": "chartBestSellerReportChart",
+          "series": "sku",
+          "disabled": true
+        }
+      ]
+    },
+    "chartMode": {
+      "daily": {
+        "name": "daily_chart"
+      },
+      "monthly": {
+        "name": "monthly_chart"
+      },
+      "weekly": {
+        "name": "weekly_chart"
+      }
+    }
+  }
+}

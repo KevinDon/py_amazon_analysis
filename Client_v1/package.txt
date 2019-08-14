@@ -1,0 +1,15 @@
+pyinstaller -F amazon.py -p icons_rc.py --paths app -i app/resource/images/favicon.ico
+pyinstaller -F -w amazon.py -p icons_rc.py --paths app -i app/resource/images/favicon.ico
+
+pyinstaller -F amazon.py --paths app
+pyinstaller amazon.py -p icons_rc.py --paths app -i app/resource/images/favicon.ico
+pyinstaller -w amazon.py -p icons_rc.py --paths app -i app/resource/images/favicon.ico
+pyinstaller -F amazon.py -p icons_rc.py --paths app -i app/resource/images/favicon.ico --runtime_tmpdir ./cache
+
+国际化
+lupdate ./amazon.py app/view/mainWindow.ui app/view/dlgLogin.ui app/view/dlgSetting.ui app/view/dlgSysEvn.ui app/view/dlgModel.ui app/view/widgetLogs.ui app/view/widgetWeb.ui app/view/widgetCronjob.ui -ts en_ZH.ts
+
+
+
+pip install --upgrade setuptools
+pip install --ignore-installed apscheduler

@@ -1,0 +1,1 @@
+INSERT INTO "system_ding_talk"("id", "name", "describe", "token", "type", "created_at", "updated_at") VALUES (1, 'PYAA', 'PYAA', '897b4f6a77ce6b05ba6936f2739af1ee2871772684768807469dfe19f3461c9f', 1, '2019-06-05 03:04:34.1114+00', '2019-06-05 03:04:34.1114+00');

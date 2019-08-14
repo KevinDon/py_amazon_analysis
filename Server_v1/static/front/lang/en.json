@@ -1,0 +1,35 @@
+{
+  "message": {
+    "success": "Operation successfully!",
+    "welcome_to_vchart": "Welcome To VCharts!"
+  },
+  "system": {
+    "lang": {
+      "title": "Languages",
+      "english": "En",
+      "chinese": "Zh"
+    }
+  },
+  "w": {
+    "daily_chart": "Daily Report",
+    "monthly_chart": "Monthly Report",
+    "weekly_chart": "Weekly Report",
+    "report_sku_total_order": "SKU Total Order Items",
+    "report_sku_uv": "SKU U/V",
+    "report_sku_pv": "SKU P/V",
+    "report_line_total_order": "LINE Total Order Items",
+    "report_line_uv": "LINE U/V",
+    "report_line_pv": "LINE P/V",
+    "report_line_buy_box_per": "LINE Buy Box Per.",
+    "report_sku_buy_box_per": "SKU Buy Box Per.",
+    "report_line_user_conversion_rate":"LINE User Conversion Rate",
+    "report_sku_composite":"Sku Composite Report",
+    "chart_home_title": "Report Chart",
+    "report_sku_review_rank": "SKU Review Rank",
+    "report_sku_price_log": "SKU Price Log",
+    "report_sku_keyword": "SKU Keyword",
+    "report_best_seller": "Best Seller Report"
+
+
+  }
+}

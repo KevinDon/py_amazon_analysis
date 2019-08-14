@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<spider>
+    <task>
+        <title><![CDATA[抓取AU指定sku_asin详情页]]></title>
+        <delay><![CDATA[3]]></delay>
+        <slices><![CDATA[300]]></slices>
+        <redo><![CDATA[0]]></redo>
+        <max-thread><![CDATA[6]]></max-thread>
+    </task>
+    <requests>
+        <cookies><![CDATA[__utmz=61970105.1562323928.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmc=61970105; __utma=61970105.138270190.1562323928.1562634824.1562734117.4; __utmb=61970105.3.10.1562734117]]></cookies>
+        <user-agent><![CDATA[Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1]]></user-agent>
+        <accept><![CDATA[]]></accept>
+        <accept-language><![CDATA[en]]></accept-language>
+    </requests>
+    <urls>
+<!--        https://www.amazon.com.au/gp/bestsellers/home/4975212051/-->
+        <items>
+            <url>
+                <protocol><![CDATA[https]]></protocol>
+                <host><![CDATA[www.amazon.com.au]]></host>
+                <path><![CDATA[gp/bestsellers/${product_asin}]]></path>
+                <params><![CDATA[]]></params>
+                <fragment><![CDATA[]]></fragment>
+                <condition>
+                    <product_asin>
+                        <type><![CDATA[var]]></type>
+                        <custom><![CDATA[B077YLDCXB]]></custom>
+                        <custom><![CDATA[B07BFCP2HM]]></custom>
+                        <custom><![CDATA[B07K5KKJFJ]]></custom>
+                        <custom><![CDATA[B07CJDZC57]]></custom>
+                        <custom><![CDATA[B077984QFN]]></custom>
+                        <custom><![CDATA[B07RNZL2JR]]></custom>
+                        <custom><![CDATA[B077ZQX348]]></custom>
+                        <custom><![CDATA[B0778GBS5N]]></custom>
+                        <custom><![CDATA[B077YJ9MZH]]></custom>
+                        <custom><![CDATA[B0777MRJCJ]]></custom>
+                        <custom><![CDATA[B076P2XVW6]]></custom>
+                        <custom><![CDATA[B07H3JCF2R]]></custom>
+                        <custom><![CDATA[B0779671HV]]></custom>
+                    </product_asin>
+                </condition>
+            </url>
+            <url>
+                <protocol><![CDATA[https]]></protocol>
+                <host><![CDATA[www.amazon.com.au]]></host>
+                <path><![CDATA[product-reviews/${product_asin}/ref=cm_cr_dp_d_show_all_btm]]></path>
+                <params><![CDATA[ie=UTF8&reviewerType=all_reviews]]></params>
+                <fragment><![CDATA[]]></fragment>
+                <condition>
+                    <product_asin>
+                        <type><![CDATA[var]]></type>
+                        <custom><![CDATA[B077YLDCXB]]></custom>
+                        <custom><![CDATA[B07BFCP2HM]]></custom>
+                        <custom><![CDATA[B07K5KKJFJ]]></custom>
+                        <custom><![CDATA[B07CJDZC57]]></custom>
+                        <custom><![CDATA[B077984QFN]]></custom>
+                        <custom><![CDATA[B07RNZL2JR]]></custom>
+                        <custom><![CDATA[B077ZQX348]]></custom>
+                        <custom><![CDATA[B0778GBS5N]]></custom>
+                        <custom><![CDATA[B077YJ9MZH]]></custom>
+                        <custom><![CDATA[B0777MRJCJ]]></custom>
+                        <custom><![CDATA[B076P2XVW6]]></custom>
+                        <custom><![CDATA[B07H3JCF2R]]></custom>
+                        <custom><![CDATA[B0779671HV]]></custom>
+                    </product_asin>
+                </condition>
+            </url>
+        </items>
+    </urls>
+    <capture>
+        <title>
+            <single><![CDATA[1]]></single>
+            <xpath><![CDATA[//html/head/title/text()]]></xpath>
+        </title>
+        <head>
+            <single><![CDATA[1]]></single>
+            <xpath><![CDATA[//html/head]]></xpath>
+        </head>
+        <body>
+            <single><![CDATA[1]]></single>
+            <xpath><![CDATA[//html/body]]></xpath>
+        </body>
+    </capture>
+    <proxy>
+        <!--1.不用代理-->
+        <!--<type><![CDATA[1]]></type>-->
+        <!--2.指定代理-->
+        <!--<type><![CDATA[2]]></type>-->
+        <!--<custom><![CDATA[192.168.1.88]]></custom>-->
+        <!--3.渠道代理-->
+        <type><![CDATA[3]]></type>
+        <channel>url</channel>
+        <!--4.区域代理-->
+        <!--<type><![CDATA[4]]></type>-->
+        <!--        <items>-->
+        <!--            <city><![CDATA[789-456-123]]></city>-->
+        <!--            <city><![CDATA[789-123-456]]></city>-->
+        <!--            <city><![CDATA[789-456-123456]]></city>-->
+        <!--        </items>-->
+        <!--        <proxys_num><![CDATA[20]]></proxys_num>-->
+    </proxy>
+</spider>

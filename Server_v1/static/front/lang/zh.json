@@ -1,0 +1,34 @@
+{
+  "message": {
+    "success": "操作成功!",
+    "welcome_to_vchart": "欢迎使用VCharts"
+  },
+  "system": {
+    "lang": {
+      "title": "多语言",
+      "english": "英文",
+      "chinese": "中文"
+    }
+  },
+  "w": {
+    "daily_chart": "日统计图",
+    "monthly_chart": "月统计图",
+    "weekly_chart": "周统计图",
+    "report_sku_total_order": "SKU购买量",
+    "report_sku_uv": "SKU用户量",
+    "report_sku_pv": "SKU访问量",
+    "report_sku_buy_box_per": "SKU购物车率",
+    "report_line_total_order": "LINE购买量",
+    "report_line_uv": "LINE用户量",
+    "report_line_pv": "LINE访问量",
+    "report_line_buy_box_per": "LINE购物车率",
+    "report_line_user_conversion_rate":"LINE用户转化率",
+    "report_sku_composite":"SKU复合统计表",
+    "chart_home_title": "报表图",
+    "report_sku_review_rank": "SKU星级报表",
+    "report_sku_price_log": "SKU价格轨迹表",
+    "report_sku_keyword": "SKU关键词报表",
+    "report_best_seller": "Best Seller报表"
+
+  }
+}

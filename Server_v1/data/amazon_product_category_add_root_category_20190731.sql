@@ -1,0 +1,1 @@
+INSERT INTO "public"."amazon_product_category"("id", "created_at", "updated_at", "creator_id", "status", "sort", "platform", "platform_id", "title", "level", "code", "parent_id") VALUES (1, '2019-07-23 11:23:49.9026+08', '2019-07-23 12:29:53.3306+08', 1, 1, 0, 'amazon', 1, 'All Category', 0, '', NULL);

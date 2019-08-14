@@ -1,0 +1,1 @@
+from core.libs.pipelines.SpiderPipelines import *

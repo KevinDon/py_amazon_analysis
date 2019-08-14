@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>{{title}}</title><script src=https://cdn.bootcss.com/echarts/4.1.0/echarts.min.js></script><style>.global-loading {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center
+    }
+
+    .global-loading .loading-element {
+      width: 64px;
+      height: 64px;
+      animation: 1s rotateRound infinite;
+    }
+
+    @keyframes rotateRound {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }</style><link href=/static/front/css/app.css rel=stylesheet></head><body><div id=app><div class=global-loading><div class=loading-element></div>Loading ...</div></div><script type=text/javascript src=/static/front/js/manifest.js></script><script type=text/javascript src=/static/front/js/vendor.js></script><script type=text/javascript src=/static/front/js/app.js></script></body></html>

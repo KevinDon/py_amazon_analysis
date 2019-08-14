@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<spider>
+    <task>
+        <title><![CDATA[单个词典测试]]></title>
+        <delay><![CDATA[1]]></delay>
+        <slices><![CDATA[300]]></slices>
+        <redo><![CDATA[1]]></redo>
+        <max-thread><![CDATA[6]]></max-thread>
+    </task>
+    <requests>
+        <cookies><![CDATA[__utmz=61970105.1562323928.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmc=61970105; __utma=61970105.138270190.1562323928.1562634824.1562734117.4; __utmb=61970105.3.10.1562734117]]></cookies>
+        <user-agent><![CDATA[Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1]]></user-agent>
+        <accept><![CDATA[]]></accept>
+        <accept-language><![CDATA[en]]></accept-language>
+    </requests>
+    <urls>
+        <items>
+            <url>
+                <protocol><![CDATA[http]]></protocol>
+                <host><![CDATA[www.baidu.com]]></host>
+                <path><![CDATA[s]]></path>
+                <params><![CDATA[wd=${keyword_title}&pn=${category_page}]]></params>
+                <fragment><![CDATA[]]></fragment>
+                <condition>
+                    <keyword_title>
+                        <type><![CDATA[var]]></type>
+                        <resource><![CDATA[keyword:title]]></resource>
+                        <range><![CDATA[__all__]]></range>
+                    </keyword_title>
+                    <category_page>
+                        <type><![CDATA[page]]></type>
+                        <range><![CDATA[1:100:20]]></range>
+                    </category_page>
+                </condition>
+            </url>
+            <!--            <url>-->
+            <!--                <protocol><![CDATA[http]]></protocol>-->
+            <!--                <host><![CDATA[dstwo.dev.com]]></host>-->
+            <!--                <path><![CDATA[catalogsearch/result/]]></path>-->
+            <!--                <params><![CDATA[q=${keyword_title}]]></params>-->
+            <!--                <fragment><![CDATA[]]></fragment>-->
+            <!--                <condition>-->
+            <!--                    <keyword_title>-->
+            <!--                        <type><![CDATA[var]]></type>-->
+            <!--                        <resource><![CDATA[keyword:title]]></resource>-->
+            <!--                        <range><![CDATA[__all__]]></range>-->
+            <!--                    </keyword_title>-->
+            <!--                    <category_page>-->
+            <!--                        <type><![CDATA[page]]></type>-->
+            <!--                        <range><![CDATA[1:5]]></range>-->
+            <!--                    </category_page>-->
+            <!--                </condition>-->
+            <!--            </url>-->
+            <!--            <url>-->
+            <!--                <protocol><![CDATA[http]]></protocol>-->
+            <!--                <host><![CDATA[dstwo.dev.com]]></host>-->
+            <!--                <path><![CDATA[catalogsearch/result/]]></path>-->
+            <!--                <params><![CDATA[qbc=${keyword_title}&${product_asin}&page=${category_page}]]></params>-->
+            <!--                <fragment><![CDATA[]]></fragment>-->
+            <!--                <condition>-->
+            <!--                    <keyword_title>-->
+            <!--                        <type><![CDATA[var]]></type>-->
+            <!--                        <resource><![CDATA[keyword:title]]></resource>-->
+            <!--                        <range><![CDATA[__all__]]></range>-->
+            <!--                    </keyword_title>-->
+            <!--                    <product_asin>-->
+            <!--                        <type><![CDATA[var]]></type>-->
+            <!--                        <resource><![CDATA[keyword:title]]></resource>-->
+            <!--                        <range><![CDATA[__all__]]></range>-->
+            <!--                    </product_asin>-->
+            <!--                    <category_page>-->
+            <!--                        <type><![CDATA[page]]></type>-->
+            <!--                        <range><![CDATA[1:5]]></range>-->
+            <!--                    </category_page>-->
+            <!--                </condition>-->
+            <!--            </url>-->
+            <!--            <url>-->
+            <!--                <protocol><![CDATA[http]]></protocol>-->
+            <!--                <host><![CDATA[dstwo.dev.com]]></host>-->
+            <!--                <path><![CDATA[catalogsearch/result/${product_asin}/]]></path>-->
+            <!--                <params><![CDATA[c=${product_asin}&q=${keyword_title}&jjj=${product_sku}]]></params>-->
+            <!--                <fragment><![CDATA[]]></fragment>-->
+            <!--                <condition>-->
+            <!--                    <keyword_title>-->
+            <!--                        <resource><![CDATA[keyword:title]]></resource>-->
+            <!--                        <custom><![CDATA[Mattress]]></custom>-->
+            <!--                        <custom><![CDATA[Desktop]]></custom>-->
+            <!--                    </keyword_title>-->
+            <!--                    <product_asin>-->
+            <!--                        <resource><![CDATA[keyword:asin]]></resource>-->
+            <!--                        <custom><![CDATA[Mattres121s]]></custom>-->
+            <!--                        <custom><![CDATA[Deskto2131p]]></custom>-->
+            <!--                    </product_asin>-->
+            <!--                    <product_sku>-->
+            <!--                        <resource><![CDATA[product:sku]]></resource>-->
+            <!--                        <range><![CDATA[__all__]]></range>-->
+            <!--                    </product_sku>-->
+            <!--                </condition>-->
+            <!--            </url>-->
+        </items>
+    </urls>
+    <capture>
+        <title>
+            <single><![CDATA[1]]></single>
+            <xpath><![CDATA[//html/head/title/text()]]></xpath>
+        </title>
+        <head>
+            <single><![CDATA[1]]></single>
+            <xpath><![CDATA[//html/head]]></xpath>
+        </head>
+        <body>
+            <single><![CDATA[1]]></single>
+            <xpath><![CDATA[//html/body]]></xpath>
+        </body>
+    </capture>
+    <proxy>
+        <!--1.不用代理-->
+        <!--<type><![CDATA[1]]></type>-->
+        <!--2.指定代理-->
+        <!--<type><![CDATA[2]]></type>-->
+        <!--<custom><![CDATA[192.168.1.88]]></custom>-->
+        <!--3.渠道代理-->
+        <type><![CDATA[3]]></type>
+        <channel>url</channel>
+        <!--4.区域代理-->
+        <!--<type><![CDATA[4]]></type>-->
+<!--        <items>-->
+<!--            <city><![CDATA[789-456-123]]></city>-->
+<!--            <city><![CDATA[789-123-456]]></city>-->
+<!--            <city><![CDATA[789-456-123456]]></city>-->
+<!--        </items>-->
+<!--        <proxys_num><![CDATA[20]]></proxys_num>-->
+    </proxy>
+</spider>

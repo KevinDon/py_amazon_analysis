@@ -1,0 +1,2 @@
+webpackJsonp([15],{"88QG":function(e,t,s){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n={render:function(){var e=this.$createElement,t=this._self._c||e;return t("el-container",[t("div",{staticClass:"empty-message"},[t("h1",[this._v(this._s(this.$t("message.welcome_to_vchart")))])])])},staticRenderFns:[]};var a=s("VU/8")({name:"chartEmpty"},n,!1,function(e){s("X1oX")},"data-v-503fcbbc",null);t.default=a.exports},X1oX:function(e,t){}});
+//# sourceMappingURL=15.js.map

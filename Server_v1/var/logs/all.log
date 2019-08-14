@@ -1,0 +1,1458 @@
+[INFO][2019-06-27 09:23:25,056][Thread-2:224][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-06-27 09:23:33,857][Thread-2:224][basehttp.py:154]"POST /api/v1/statamazonsku/ HTTP/1.1" 200 66
+[INFO][2019-06-27 10:23:11,440][Thread-3:14492][basehttp.py:154]"GET / HTTP/1.1" 200 1063
+[INFO][2019-06-27 10:23:11,628][Thread-4:17680][basehttp.py:154]"GET /static/front/js/manifest.js HTTP/1.1" 200 1412
+[INFO][2019-06-27 10:23:11,660][Thread-4:17680][basehttp.py:154]"GET /static/front/js/app.js HTTP/1.1" 200 8583
+[INFO][2019-06-27 10:23:11,710][Thread-3:14492][basehttp.py:154]"GET /static/front/css/app.css HTTP/1.1" 200 235906
+[INFO][2019-06-27 10:23:11,753][Thread-5:12292][basehttp.py:154]"GET /static/front/js/vendor.js HTTP/1.1" 200 762254
+[INFO][2019-06-27 12:59:45,295][Thread-9:17772][basehttp.py:154]"GET / HTTP/1.1" 200 1063
+[INFO][2019-06-27 12:59:45,792][Thread-9:17772][basehttp.py:154]"GET / HTTP/1.1" 200 1063
+[INFO][2019-06-27 12:59:46,236][Thread-12:14288][basehttp.py:154]"GET /static/front/js/manifest.js HTTP/1.1" 304 0
+[INFO][2019-06-27 12:59:46,238][Thread-9:17772][basehttp.py:154]"GET /static/front/css/app.css HTTP/1.1" 304 0
+[INFO][2019-06-27 12:59:46,248][Thread-12:14288][basehttp.py:154]"GET /static/front/js/vendor.js HTTP/1.1" 304 0
+[INFO][2019-06-27 12:59:46,249][Thread-9:17772][basehttp.py:154]"GET /static/front/js/app.js HTTP/1.1" 304 0
+[INFO][2019-06-27 13:00:26,913][Thread-15:15472][basehttp.py:154]"GET / HTTP/1.1" 200 1063
+[INFO][2019-06-27 13:00:27,532][Thread-15:15472][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-06-27 13:00:27,571][Thread-15:15472][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-06-27 13:01:22,835][Thread-18:15680][basehttp.py:154]"GET / HTTP/1.1" 200 1063
+[INFO][2019-06-27 13:01:23,197][Thread-18:15680][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-06-27 13:01:23,203][Thread-18:15680][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-06-27 13:59:11,787][Thread-2:12376][basehttp.py:154]"POST /api/v1/statamazonsku/ HTTP/1.1" 200 77
+[INFO][2019-06-27 13:59:18,746][Thread-2:12376][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-06-27 13:59:23,944][Thread-2:12376][basehttp.py:154]"POST /api/v1/statamazonsku/ HTTP/1.1" 200 66
+[ERROR][2019-06-27 14:00:41,703][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/statamazonsku/
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 483, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 400, in initial
+    self.perform_authentication(request)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 326, in perform_authentication
+    request.user
+  File "F:\Python\lib\site-packages\rest_framework\request.py", line 223, in user
+    self._authenticate()
+  File "F:\Python\lib\site-packages\rest_framework\request.py", line 376, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "F:\Python\lib\site-packages\rest_framework\authentication.py", line 192, in authenticate
+    return self.authenticate_credentials(token)
+  File "F:\Python\lib\site-packages\rest_framework\authentication.py", line 197, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:00:41,708][Thread-2:16120][basehttp.py:154]"POST /api/v1/statamazonsku/ HTTP/1.1" 500 179452
+[ERROR][2019-06-27 14:00:50,424][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/apitokenauth
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\UserView.py", line 27, in post
+    token, created = Token.objects.get_or_create(user=user)
+  File "F:\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
+    return self.get(**lookup), False
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:00:50,444][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 500 164651
+[INFO][2019-06-27 14:01:39,279][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 63
+[ERROR][2019-06-27 14:01:48,951][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/apitokenauth
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\UserView.py", line 27, in post
+    token, created = Token.objects.get_or_create(user=user)
+  File "F:\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
+    return self.get(**lookup), False
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:01:48,956][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 500 164812
+[INFO][2019-06-27 14:01:54,990][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 63
+[ERROR][2019-06-27 14:02:12,241][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/apitokenauth
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\UserView.py", line 27, in post
+    token, created = Token.objects.get_or_create(user=user)
+  File "F:\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
+    return self.get(**lookup), False
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:02:12,246][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 500 164804
+[INFO][2019-06-27 14:02:35,503][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 63
+[ERROR][2019-06-27 14:03:41,289][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/apitokenauth
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\UserView.py", line 27, in post
+    token, created = Token.objects.get_or_create(user=user)
+  File "F:\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
+    return self.get(**lookup), False
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:03:41,292][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 500 164671
+[INFO][2019-06-27 14:26:28,663][Thread-2:17860][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-06-27 14:26:33,592][Thread-2:17860][basehttp.py:154]"POST /api/v1/statamazonsku/ HTTP/1.1" 200 66
+[INFO][2019-06-27 14:27:41,380][Thread-3:18476][basehttp.py:154]"OPTIONS /api/v1/statamazonsku/?page=1&size=500 HTTP/1.1" 200 0
+[INFO][2019-06-27 14:27:41,595][Thread-3:18476][basehttp.py:154]"POST /api/v1/statamazonsku/?page=1&size=500 HTTP/1.1" 200 66
+[INFO][2019-06-27 14:54:09,760][Thread-2:17860][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-06-27 14:55:41,935][Thread-4:4892][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-06-27 14:55:41,993][Thread-5:16348][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 195
+[INFO][2019-06-27 15:56:37,863][MainThread:16528][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 16:13:30,913][MainThread:15860][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 16:15:50,828][MainThread:15416][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 16:16:44,618][MainThread:15416][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\ProductListView.py changed, reloading.
+[INFO][2019-06-27 16:16:45,752][MainThread:17576][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 16:18:26,598][MainThread:20688][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 16:19:48,481][MainThread:18828][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 16:20:41,680][MainThread:18400][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 16:24:07,465][MainThread:21136][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:35:32,995][MainThread:21136][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\__init__.py changed, reloading.
+[INFO][2019-06-27 18:35:33,480][MainThread:18828][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\__init__.py changed, reloading.
+[INFO][2019-06-27 18:35:40,681][MainThread:20312][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:35:49,680][MainThread:20688][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:36:03,671][MainThread:20312][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\api\urls.py changed, reloading.
+[INFO][2019-06-27 18:36:04,960][MainThread:21600][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:36:07,135][MainThread:20688][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\api\urls.py changed, reloading.
+[INFO][2019-06-27 18:36:07,545][MainThread:21600][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\api\urls.py changed, reloading.
+[INFO][2019-06-27 18:36:08,707][MainThread:16276][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:36:09,438][MainThread:6644][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:36:20,331][MainThread:22032][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:37:57,342][MainThread:16276][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\api\urls.py changed, reloading.
+[INFO][2019-06-27 18:37:57,784][MainThread:22032][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\api\urls.py changed, reloading.
+[INFO][2019-06-27 18:37:58,574][MainThread:22364][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:37:59,996][MainThread:5324][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:38:55,503][MainThread:16580][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:39:15,287][MainThread:13764][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:40:09,059][MainThread:19776][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:40:28,068][MainThread:19776][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\StatAmazonSkuPvView.py changed, reloading.
+[INFO][2019-06-27 18:40:30,836][MainThread:21008][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:40:39,532][MainThread:6644][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-06-27 18:41:26,141][MainThread:19892][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-07-02 19:34:39,742][MainThread:14828][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-07-02 19:41:40,523][MainThread:16204][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-07-03 08:42:13,322][MainThread:47564][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-07-03 08:42:18,180][Thread-2:52952][basehttp.py:154]"GET / HTTP/1.1" 200 1063
+[INFO][2019-07-03 08:42:18,356][Thread-3:52964][basehttp.py:154]"GET /static/front/js/manifest.js HTTP/1.1" 200 1412
+[INFO][2019-07-03 08:42:18,372][Thread-5:45384][basehttp.py:154]"GET /static/front/js/app.js HTTP/1.1" 200 8583
+[INFO][2019-07-03 08:42:18,470][Thread-2:52952][basehttp.py:154]"GET /static/front/css/app.css HTTP/1.1" 200 235906
+[INFO][2019-07-03 08:42:18,634][Thread-4:52932][basehttp.py:154]"GET /static/front/js/vendor.js HTTP/1.1" 200 762254
+[INFO][2019-07-03 08:42:18,895][Thread-4:52932][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-03 08:42:18,913][Thread-4:52932][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-03 08:43:01,723][Thread-4:52932][basehttp.py:154]"GET /admin HTTP/1.1" 301 0
+[INFO][2019-07-03 08:43:01,809][Thread-4:52932][basehttp.py:154]"GET /admin/ HTTP/1.1" 302 0
+[INFO][2019-07-03 08:43:01,995][Thread-4:52932][basehttp.py:154]"GET /admin/login/?next=/admin/ HTTP/1.1" 200 8549
+[INFO][2019-07-03 08:43:02,036][Thread-4:52932][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:43:02,062][Thread-4:52932][basehttp.py:154]"GET /static/admin/css/login.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:43:02,075][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:43:02,087][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:43:02,092][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:43:02,135][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:43:02,136][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:43:02,160][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:43:02,168][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:43:02,174][Thread-4:52932][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:43:02,195][Thread-3:52964][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:43:04,931][Thread-3:52964][basehttp.py:154]"POST /admin/login/?next=/admin/ HTTP/1.1" 200 8681
+[INFO][2019-07-03 08:43:04,971][Thread-3:52964][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:43:07,154][Thread-3:52964][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:43:08,348][Thread-3:52964][basehttp.py:154]"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[INFO][2019-07-03 08:43:08,707][Thread-3:52964][basehttp.py:154]"GET /admin/ HTTP/1.1" 200 79473
+[INFO][2019-07-03 08:43:08,748][Thread-3:52964][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:43:08,750][Thread-4:52932][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:43:09,102][Thread-4:52932][basehttp.py:154]"GET /jet/dashboard/load_dashboard_module/5/ HTTP/1.1" 200 226
+[INFO][2019-07-03 08:43:09,119][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:43:10,112][Thread-3:52964][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:43:13,335][Thread-3:52964][basehttp.py:154]"GET /admin/dictionary/ HTTP/1.1" 200 55588
+[INFO][2019-07-03 08:43:13,401][Thread-3:52964][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:43:13,867][Thread-3:52964][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[ERROR][2019-07-03 08:43:14,851][Thread-3:52964][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 08:43:18,559][Thread-3:52964][basehttp.py:154]"GET /admin/dictionary/ HTTP/1.1" 200 55588
+[INFO][2019-07-03 08:43:20,013][Thread-3:52964][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[ERROR][2019-07-03 08:43:53,269][Thread-3:52964][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 08:44:08,699][Thread-3:52964][basehttp.py:154]"GET /admin/dictionary/ HTTP/1.1" 200 55588
+[INFO][2019-07-03 08:44:08,844][Thread-3:52964][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:44:08,851][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:44:08,852][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:44:08,852][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:44:08,856][Thread-3:52964][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:44:08,865][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:44:08,875][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:44:08,894][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:44:08,901][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:44:08,903][Thread-7:55096][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:44:08,950][Thread-4:52932][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:44:09,304][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:44:09,401][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:44:09,409][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:44:09,443][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[ERROR][2019-07-03 08:44:10,552][Thread-4:52932][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:48:45,444][Thread-4:52932][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:48:46,830][Thread-4:52932][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 08:48:47,187][Thread-4:52932][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-03 08:48:47,197][Thread-4:52932][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-03 08:48:49,526][Thread-4:52932][basehttp.py:154]"GET /admin/dictionary/ HTTP/1.1" 200 55588
+[INFO][2019-07-03 08:48:49,555][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:48:49,559][Thread-4:52932][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:48:49,562][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:48:49,568][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:48:49,575][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:48:49,578][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:48:49,579][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:48:49,582][Thread-4:52932][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:48:49,583][Thread-3:52964][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:48:49,590][Thread-6:47540][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:48:49,628][Thread-7:55096][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:48:49,948][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:48:50,078][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:48:50,087][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:48:50,113][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:48:50,539][Thread-7:55096][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:48:50,555][Thread-6:47540][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[ERROR][2019-07-03 08:48:51,566][Thread-6:47540][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 08:48:53,368][Thread-6:47540][basehttp.py:154]"GET /admin/dictionary/ HTTP/1.1" 200 55588
+[INFO][2019-07-03 08:48:53,401][Thread-6:47540][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:48:53,407][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:48:53,407][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:48:53,408][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:48:53,412][Thread-6:47540][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:48:53,417][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:48:53,421][Thread-3:52964][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:48:53,427][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:48:53,427][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:48:53,440][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:48:53,520][Thread-7:55096][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:48:53,776][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:48:53,887][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:48:53,900][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:48:53,912][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[ERROR][2019-07-03 08:48:54,662][Thread-7:55096][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:48:55,759][Thread-7:55096][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 08:48:56,100][Thread-7:55096][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-03 08:48:56,121][Thread-7:55096][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-03 08:48:56,717][Thread-7:55096][basehttp.py:154]"GET /admin/dictionary/ HTTP/1.1" 200 55588
+[INFO][2019-07-03 08:48:56,751][Thread-7:55096][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:48:56,755][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:48:56,782][Thread-6:47540][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:48:56,782][Thread-3:52964][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:48:56,783][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:48:56,784][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:48:56,785][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:48:56,792][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:48:56,803][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:48:56,804][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:48:56,835][Thread-6:47540][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:48:57,092][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:48:57,196][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:48:57,206][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:48:57,228][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:48:58,536][Thread-6:47540][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:48:58,571][Thread-2:52952][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[ERROR][2019-07-03 08:49:11,020][Thread-2:52952][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:50:23,222][Thread-2:52952][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 08:50:23,648][Thread-2:52952][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-03 08:50:23,659][Thread-2:52952][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-03 08:51:59,845][Thread-2:52952][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 200 57116
+[INFO][2019-07-03 08:51:59,868][Thread-2:52952][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:51:59,886][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:51:59,891][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:51:59,913][Thread-5:45384][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:51:59,924][Thread-7:55096][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:00,023][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:52:00,024][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:52:00,024][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:52:00,062][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:52:00,070][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:52:00,091][Thread-2:52952][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:52:00,118][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:52:00,127][Thread-4:52932][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:00,128][Thread-6:47540][basehttp.py:154]"GET /static/dictionary/add-dictionary-form.js HTTP/1.1" 200 1156
+[INFO][2019-07-03 08:52:00,148][Thread-5:45384][basehttp.py:154]"GET /static/common/Dictionary.js HTTP/1.1" 200 1449
+[INFO][2019-07-03 08:52:00,176][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:52:00,184][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:52:00,228][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:00,252][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:52:00,264][Thread-6:47540][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:52:00,269][Thread-3:52964][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 08:52:00,292][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:52:00,295][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:52:00,358][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:52:00,380][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:52:00,430][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:52:00,446][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:52:00,699][Thread-5:45384][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-03 08:52:00,743][Thread-5:45384][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-03 08:52:05,031][Thread-2:52952][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:05,033][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:52:05,035][Thread-4:52932][basehttp.py:154]"GET /static/common/Dictionary.js HTTP/1.1" 200 1449
+[INFO][2019-07-03 08:52:05,036][Thread-3:52964][basehttp.py:154]"GET /static/dictionary/add-dictionary-form.js HTTP/1.1" 200 1156
+[INFO][2019-07-03 08:52:05,072][Thread-6:47540][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:52:05,081][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:05,096][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:52:05,102][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:52:05,118][Thread-6:47540][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:52:05,129][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:52:05,141][Thread-5:45384][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:15,647][Thread-5:45384][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/3/change/ HTTP/1.1" 200 68586
+[INFO][2019-07-03 08:52:15,680][Thread-5:45384][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:52:15,684][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:52:15,715][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:52:15,719][Thread-7:55096][basehttp.py:154]"GET /static/admin/css/forms.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:15,719][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:52:15,720][Thread-2:52952][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:15,736][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:52:15,758][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:52:15,766][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:52:15,772][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:52:15,782][Thread-3:52964][basehttp.py:154]"GET /static/common/Dictionary.js HTTP/1.1" 200 1449
+[INFO][2019-07-03 08:52:15,806][Thread-6:47540][basehttp.py:154]"GET /static/dictionary/add-dictionary-form.js HTTP/1.1" 200 1156
+[INFO][2019-07-03 08:52:15,822][Thread-5:45384][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:52:15,832][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:52:15,835][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:52:15,846][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:52:15,848][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:15,865][Thread-6:47540][basehttp.py:154]"GET /static/admin/js/inlines.js HTTP/1.1" 200 13810
+[INFO][2019-07-03 08:52:15,868][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:52:15,871][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:52:15,880][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:52:15,884][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:52:15,891][Thread-4:52932][basehttp.py:154]"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[INFO][2019-07-03 08:52:15,894][Thread-3:52964][basehttp.py:154]"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[INFO][2019-07-03 08:52:15,967][Thread-2:52952][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:16,043][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[INFO][2019-07-03 08:52:16,046][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[INFO][2019-07-03 08:52:16,088][Thread-3:52964][basehttp.py:154]"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[INFO][2019-07-03 08:52:16,199][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:52:16,203][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:52:16,220][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:52:16,331][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:52:20,819][Thread-3:52964][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:20,825][Thread-5:45384][basehttp.py:154]"GET /static/dictionary/add-dictionary-form.js HTTP/1.1" 200 1156
+[INFO][2019-07-03 08:52:20,835][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:52:20,839][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/inlines.js HTTP/1.1" 200 13810
+[INFO][2019-07-03 08:52:20,856][Thread-6:47540][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:20,865][Thread-5:45384][basehttp.py:154]"GET /static/common/Dictionary.js HTTP/1.1" 200 1449
+[INFO][2019-07-03 08:52:20,875][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:52:20,896][Thread-2:52952][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:52:20,934][Thread-6:47540][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:52:20,935][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[INFO][2019-07-03 08:52:20,935][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:52:20,950][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[INFO][2019-07-03 08:52:20,966][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:52:20,980][Thread-4:52932][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:42,756][Thread-4:52932][basehttp.py:154]"GET /admin/amazon/ HTTP/1.1" 200 57159
+[INFO][2019-07-03 08:52:42,799][Thread-4:52932][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:52:42,801][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:52:42,811][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:52:42,811][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:52:42,833][Thread-2:52952][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:42,833][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:52:42,838][Thread-4:52932][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:42,840][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:52:42,844][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:52:42,851][Thread-6:47540][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:52:42,914][Thread-5:45384][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:52:43,352][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:52:43,505][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:52:43,507][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:52:43,536][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:52:45,043][Thread-5:45384][basehttp.py:154]"GET /admin/amazon/captureskubuyboxstatemodel/ HTTP/1.1" 200 50342
+[INFO][2019-07-03 08:52:45,099][Thread-5:45384][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:52:45,126][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:52:45,139][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:52:45,142][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:52:45,142][Thread-7:55096][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:45,166][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:52:45,171][Thread-7:55096][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:45,191][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:52:45,203][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:52:45,207][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:52:45,209][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:52:45,215][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:52:45,222][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:52:45,225][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:45,233][Thread-2:52952][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:52:45,233][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:52:45,246][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:52:45,248][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:52:45,256][Thread-5:45384][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 08:52:45,264][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:52:45,266][Thread-6:47540][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:45,550][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:52:45,555][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:52:45,616][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:52:45,641][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:52:47,935][Thread-2:52952][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:47,937][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:52:47,952][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:47,959][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:52:47,960][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:52:47,980][Thread-5:45384][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:52:47,998][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:52:48,040][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:52:48,148][Thread-6:47540][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:51,932][Thread-6:47540][basehttp.py:154]"GET /admin/system/proxyipmodel/ HTTP/1.1" 200 50852
+[INFO][2019-07-03 08:52:52,025][Thread-3:52964][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:52:52,029][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:52:52,029][Thread-6:47540][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:52:52,032][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:52:52,049][Thread-2:52952][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:52:52,049][Thread-3:52964][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:52,056][Thread-7:55096][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:52,084][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:52:52,094][Thread-5:45384][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:52:52,105][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:52:52,119][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:52:52,142][Thread-3:52964][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:52:52,142][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:52:52,156][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:52,166][Thread-7:55096][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:52:52,174][Thread-5:45384][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:52:52,174][Thread-3:52964][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:52:52,177][Thread-2:52952][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:52:52,184][Thread-7:55096][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 08:52:52,188][Thread-4:52932][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:52:52,209][Thread-6:47540][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:52,484][Thread-7:55096][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:52:52,489][Thread-4:52932][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:52:52,499][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:52:52,572][Thread-6:47540][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:52:57,153][Thread-9:82068][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:52:57,159][Thread-11:76332][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:52:57,164][Thread-9:82068][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:52:57,167][Thread-11:76332][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:52:57,172][Thread-12:82796][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:52:57,210][Thread-10:77280][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:52:57,217][Thread-13:81952][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:52:57,220][Thread-9:82068][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:52:57,254][Thread-8:81640][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:53:00,595][Thread-8:81640][basehttp.py:154]"GET /admin/system/proxyipmodel/?agent_type__exact=3 HTTP/1.1" 200 50956
+[INFO][2019-07-03 08:53:00,688][Thread-8:81640][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:53:00,697][Thread-9:82068][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:53:00,712][Thread-11:76332][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:53:00,720][Thread-12:82796][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:53:00,727][Thread-8:81640][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:53:00,737][Thread-13:81952][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:53:00,759][Thread-10:77280][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:53:00,766][Thread-8:81640][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:53:00,779][Thread-11:76332][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:53:00,787][Thread-8:81640][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:53:00,791][Thread-12:82796][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:53:00,808][Thread-11:76332][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:53:00,809][Thread-10:77280][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:53:00,812][Thread-8:81640][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:53:00,822][Thread-13:81952][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:53:00,825][Thread-12:82796][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:53:00,832][Thread-11:76332][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:53:00,835][Thread-10:77280][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:53:00,838][Thread-13:81952][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 08:53:00,852][Thread-8:81640][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:53:00,858][Thread-9:82068][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:53:01,072][Thread-13:81952][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:53:01,092][Thread-8:81640][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:53:01,110][Thread-9:82068][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:53:01,332][Thread-9:82068][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:53:05,809][Thread-15:80312][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:53:05,828][Thread-15:80312][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:53:05,830][Thread-17:78952][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:53:05,832][Thread-18:78404][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:53:05,851][Thread-18:78404][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:53:05,867][Thread-15:80312][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:53:05,873][Thread-19:78756][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:53:05,892][Thread-16:77720][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:53:05,945][Thread-14:80644][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:57:36,483][Thread-20:7160][basehttp.py:154]"GET /admin/system/proxyipmodel/ HTTP/1.1" 200 50852
+[INFO][2019-07-03 08:57:36,539][Thread-20:7160][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:57:36,572][Thread-20:7160][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:57:36,582][Thread-21:4000][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:57:36,592][Thread-20:7160][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:57:36,605][Thread-23:12432][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:57:36,609][Thread-24:20864][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:57:36,614][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:57:36,617][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:57:36,628][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:57:36,628][Thread-25:22872][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:57:36,631][Thread-22:788][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:57:36,644][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:57:36,654][Thread-22:788][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:57:36,657][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:57:36,664][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:57:36,680][Thread-24:20864][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:57:36,683][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:57:36,687][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:57:36,690][Thread-22:788][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:57:36,704][Thread-20:7160][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 08:57:36,708][Thread-21:4000][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:57:36,928][Thread-20:7160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:57:36,934][Thread-21:4000][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:57:36,940][Thread-21:4000][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:57:36,968][Thread-21:4000][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:57:41,663][Thread-20:7160][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:57:41,664][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:57:41,664][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:57:41,665][Thread-22:788][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:57:41,671][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:57:41,672][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:57:41,684][Thread-22:788][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:57:41,684][Thread-23:12432][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:57:41,726][Thread-21:4000][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:03,295][Thread-21:4000][basehttp.py:154]"GET /admin/system/regionmodel/ HTTP/1.1" 200 50721
+[INFO][2019-07-03 08:58:03,315][Thread-21:4000][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:58:03,323][Thread-22:788][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:58:03,328][Thread-23:12432][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:58:03,374][Thread-23:12432][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:58:03,377][Thread-22:788][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:58:03,380][Thread-24:20864][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:03,381][Thread-20:7160][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:03,392][Thread-22:788][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:58:03,400][Thread-21:4000][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:58:03,411][Thread-22:788][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:58:03,417][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:58:03,423][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:58:03,424][Thread-22:788][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:58:03,427][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:03,443][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:58:03,457][Thread-22:788][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:58:03,473][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:58:03,475][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:58:03,481][Thread-20:7160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:58:03,492][Thread-22:788][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 08:58:03,496][Thread-25:22872][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:03,803][Thread-20:7160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:58:03,811][Thread-22:788][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:58:03,817][Thread-25:22872][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:58:03,825][Thread-22:788][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:58:08,467][Thread-25:22872][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:08,473][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:58:08,473][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:58:08,475][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:08,480][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:58:08,491][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:58:08,495][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:58:08,503][Thread-20:7160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:58:08,542][Thread-22:788][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:12,171][Thread-22:788][basehttp.py:154]"GET /admin/system/regionmodel/ HTTP/1.1" 200 50721
+[INFO][2019-07-03 08:58:12,217][Thread-22:788][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:58:12,217][Thread-23:12432][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:58:12,217][Thread-25:22872][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:58:12,225][Thread-21:4000][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:58:12,254][Thread-22:788][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:12,254][Thread-21:4000][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:12,255][Thread-20:7160][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:58:12,260][Thread-24:20864][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:58:12,276][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:58:12,278][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:58:12,279][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:58:12,296][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:58:12,297][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:58:12,299][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:12,307][Thread-22:788][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:58:12,315][Thread-22:788][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:58:12,318][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:58:12,327][Thread-23:12432][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:12,336][Thread-22:788][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 08:58:12,340][Thread-24:20864][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:58:12,340][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:58:12,593][Thread-22:788][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:58:12,599][Thread-24:20864][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:58:12,606][Thread-20:7160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:58:12,656][Thread-20:7160][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:58:17,345][Thread-24:20864][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:17,351][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:58:17,351][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:58:17,351][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:58:17,352][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:17,361][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:58:17,375][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:58:17,387][Thread-22:788][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:58:17,415][Thread-20:7160][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:18,335][Thread-20:7160][basehttp.py:154]"GET /admin/system/proxyipmodel/ HTTP/1.1" 200 50852
+[INFO][2019-07-03 08:58:18,391][Thread-20:7160][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:58:18,393][Thread-23:12432][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:58:18,393][Thread-25:22872][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:58:18,394][Thread-24:20864][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:58:18,416][Thread-22:788][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:58:18,420][Thread-25:22872][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:18,421][Thread-20:7160][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:18,423][Thread-22:788][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:58:18,432][Thread-21:4000][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:58:18,440][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:58:18,443][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:58:18,444][Thread-22:788][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:58:18,456][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:58:18,457][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:18,465][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:58:18,473][Thread-22:788][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:58:18,476][Thread-20:7160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:58:18,486][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:58:18,491][Thread-20:7160][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 08:58:18,494][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:58:18,519][Thread-23:12432][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:18,702][Thread-20:7160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:58:18,705][Thread-24:20864][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:58:18,710][Thread-23:12432][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:58:18,759][Thread-23:12432][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:58:23,503][Thread-24:20864][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:23,504][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:58:23,508][Thread-22:788][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:23,516][Thread-25:22872][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:58:23,518][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:58:23,523][Thread-22:788][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:58:23,529][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:58:23,537][Thread-20:7160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:58:23,590][Thread-23:12432][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:31,835][Thread-23:12432][basehttp.py:154]"GET /admin/system/regionmodel/ HTTP/1.1" 200 50721
+[INFO][2019-07-03 08:58:31,865][Thread-23:12432][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 08:58:31,873][Thread-21:4000][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 08:58:31,881][Thread-24:20864][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 08:58:31,883][Thread-25:22872][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:31,883][Thread-20:7160][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 08:58:31,883][Thread-22:788][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 08:58:31,908][Thread-21:4000][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:31,911][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 08:58:31,930][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 08:58:31,937][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:58:31,939][Thread-23:12432][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 08:58:31,940][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 08:58:31,944][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:31,945][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:58:31,953][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:58:31,960][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 08:58:31,966][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:58:31,973][Thread-22:788][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:58:31,975][Thread-24:20864][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 08:58:31,980][Thread-20:7160][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:58:32,009][Thread-25:22872][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:32,255][Thread-20:7160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 08:58:32,256][Thread-24:20864][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 08:58:32,263][Thread-25:22872][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 08:58:32,292][Thread-25:22872][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 08:58:37,014][Thread-24:20864][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 08:58:37,016][Thread-22:788][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 08:58:37,022][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 08:58:37,033][Thread-22:788][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 08:58:37,039][Thread-24:20864][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 08:58:37,039][Thread-23:12432][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 08:58:37,048][Thread-21:4000][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 08:58:37,055][Thread-20:7160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 08:58:37,119][Thread-25:22872][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:14:19,129][Thread-26:57552][basehttp.py:154]"GET /admin/amazon/ HTTP/1.1" 200 57159
+[INFO][2019-07-03 09:14:19,199][Thread-26:57552][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:14:19,207][Thread-28:51420][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:14:19,220][Thread-27:62460][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:14:19,220][Thread-26:57552][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:14:19,224][Thread-28:51420][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:14:19,224][Thread-30:61228][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:14:19,241][Thread-29:57044][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:14:19,254][Thread-31:52112][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:14:19,263][Thread-26:57552][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:14:19,287][Thread-27:62460][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:14:19,295][Thread-28:51420][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:14:19,544][Thread-28:51420][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:14:19,632][Thread-26:57552][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:14:19,634][Thread-27:62460][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:14:19,641][Thread-28:51420][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[ERROR][2019-07-03 09:14:23,279][Thread-28:51420][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 09:20:50,476][Thread-32:77160][basehttp.py:154]"GET /admin/amazon/ HTTP/1.1" 200 57159
+[INFO][2019-07-03 09:20:50,564][Thread-32:77160][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:20:50,583][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:20:50,601][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:20:50,605][Thread-32:77160][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:20:50,618][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:20:50,623][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:20:50,623][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:20:50,627][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:20:50,636][Thread-33:77956][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:20:50,646][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:20:50,651][Thread-37:77488][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:20:50,903][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:20:51,026][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:20:51,031][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:20:51,047][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:20:52,572][Thread-37:77488][basehttp.py:154]"GET /admin/dictionary/ HTTP/1.1" 200 55588
+[INFO][2019-07-03 09:20:52,611][Thread-37:77488][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:20:52,616][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:20:52,617][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:20:52,617][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:20:52,623][Thread-37:77488][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:20:52,624][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:20:52,633][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:20:52,665][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:20:52,680][Thread-32:77160][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:20:52,715][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:20:52,750][Thread-34:74528][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:20:52,977][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:20:53,092][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:20:53,102][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:20:53,108][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:20:55,671][Thread-34:74528][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:20:55,692][Thread-36:72892][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:20:56,358][Thread-36:72892][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 200 53961
+[INFO][2019-07-03 09:20:56,407][Thread-36:72892][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:20:56,416][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:20:56,419][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:20:56,420][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:20:56,427][Thread-36:72892][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:20:56,430][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:20:56,435][Thread-37:77488][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:20:56,446][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:20:56,447][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:20:56,456][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:20:56,456][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 09:20:56,460][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:20:56,479][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:20:56,480][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:20:56,483][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:20:56,496][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 09:20:56,500][Thread-36:72892][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:20:56,510][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:20:56,513][Thread-33:77956][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 09:20:56,539][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:20:56,544][Thread-32:77160][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:20:56,913][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:20:56,915][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:20:56,916][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:20:56,927][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:20:57,791][Thread-34:74528][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:20:57,792][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:20:57,807][Thread-33:77956][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:20:57,819][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:20:57,825][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:20:57,825][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:20:57,827][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:20:57,865][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:20:57,891][Thread-32:77160][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:20:58,299][Thread-32:77160][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/2/change/ HTTP/1.1" 200 56378
+[INFO][2019-07-03 09:20:58,383][Thread-32:77160][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:20:58,388][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:20:58,392][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:20:58,401][Thread-32:77160][basehttp.py:154]"GET /static/admin/css/forms.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:20:58,403][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:20:58,404][Thread-34:74528][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:20:58,411][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:20:58,414][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:20:58,441][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:20:58,467][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:20:58,475][Thread-32:77160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:20:58,500][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 09:20:58,508][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/collapse.js HTTP/1.1" 200 1157
+[INFO][2019-07-03 09:20:58,515][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 09:20:58,536][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:20:58,536][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:20:58,539][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:20:58,547][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:20:58,555][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:20:58,558][Thread-32:77160][basehttp.py:154]"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[INFO][2019-07-03 09:20:58,558][Thread-35:77272][basehttp.py:154]"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[INFO][2019-07-03 09:20:58,571][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:20:58,576][Thread-34:74528][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:20:58,621][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[INFO][2019-07-03 09:20:58,632][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[INFO][2019-07-03 09:20:58,664][Thread-34:74528][basehttp.py:154]"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[INFO][2019-07-03 09:20:58,764][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:20:58,773][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:20:58,793][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:20:58,828][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:21:01,614][Thread-34:74528][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:21:01,625][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:21:01,625][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/collapse.js HTTP/1.1" 200 1157
+[INFO][2019-07-03 09:21:01,625][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:21:01,628][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:21:01,638][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:21:01,641][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:21:01,665][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[INFO][2019-07-03 09:21:01,674][Thread-33:77956][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:21:01,674][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:21:01,674][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[INFO][2019-07-03 09:21:01,736][Thread-35:77272][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:25:50,918][Thread-35:77272][basehttp.py:154]"GET /admin/task/ HTTP/1.1" 200 56190
+[INFO][2019-07-03 09:25:50,951][Thread-35:77272][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:25:50,969][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:25:50,971][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:25:50,975][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:25:50,976][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:25:50,980][Thread-35:77272][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:25:50,990][Thread-32:77160][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:25:50,999][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:25:51,003][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:25:51,023][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:25:51,032][Thread-36:72892][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:25:51,319][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:25:51,448][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:25:51,452][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:25:51,464][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:25:55,253][Thread-36:72892][basehttp.py:154]"GET /admin/task/taskmessagemodel/ HTTP/1.1" 200 50800
+[INFO][2019-07-03 09:25:55,292][Thread-36:72892][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:25:55,292][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:25:55,310][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:25:55,348][Thread-35:77272][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:25:55,353][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:25:55,400][Thread-37:77488][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:25:55,401][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:25:55,404][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:25:55,406][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:25:55,414][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:25:55,424][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:25:55,424][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 09:25:55,433][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 09:25:55,440][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:25:55,441][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:25:55,441][Thread-37:77488][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:25:55,450][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:25:55,455][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:25:55,464][Thread-32:77160][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:25:55,465][Thread-36:72892][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 09:25:55,470][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:25:55,747][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:25:55,750][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:25:55,760][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:25:55,767][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:25:56,118][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:25:56,121][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:25:56,121][Thread-36:72892][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:25:56,123][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:25:56,131][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:25:56,132][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:25:56,144][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:25:56,161][Thread-32:77160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:25:56,207][Thread-37:77488][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:25:58,612][Thread-37:77488][basehttp.py:154]"GET /admin/task/taskmessagemodel/?status__exact=1 HTTP/1.1" 200 50896
+[INFO][2019-07-03 09:25:58,691][Thread-37:77488][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:25:58,692][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:25:58,703][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:25:58,703][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:25:58,708][Thread-36:72892][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:25:58,711][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:25:58,751][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:25:58,769][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:25:58,783][Thread-32:77160][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:25:58,788][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:25:58,792][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 09:25:58,809][Thread-36:72892][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:25:58,815][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:25:58,815][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:25:58,819][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:25:58,819][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 09:25:58,828][Thread-37:77488][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:25:58,833][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:25:58,845][Thread-35:77272][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 09:25:58,851][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:25:58,854][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:25:59,131][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:25:59,136][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:25:59,142][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:25:59,145][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:26:00,463][Thread-34:74528][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:00,464][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:26:00,470][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:26:00,470][Thread-33:77956][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:26:00,475][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:26:00,505][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:26:00,506][Thread-32:77160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:26:00,519][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:26:00,535][Thread-35:77272][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:00,802][Thread-35:77272][basehttp.py:154]"GET /admin/task/taskmessagemodel/?status__exact=2 HTTP/1.1" 200 50896
+[INFO][2019-07-03 09:26:00,831][Thread-35:77272][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:26:00,845][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:26:00,865][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:26:00,868][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:26:00,868][Thread-34:74528][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:26:00,868][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:26:00,875][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:26:00,881][Thread-36:72892][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:00,888][Thread-37:77488][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:26:00,891][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:26:00,901][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:26:00,948][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:26:00,951][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 09:26:00,956][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:26:00,967][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:26:00,976][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 09:26:00,983][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:26:00,986][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:26:01,023][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:26:01,028][Thread-34:74528][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 09:26:01,049][Thread-33:77956][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:01,263][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:26:01,273][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:26:01,284][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:26:01,332][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:26:03,808][Thread-34:74528][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:03,809][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:26:03,811][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:26:03,812][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:26:03,819][Thread-37:77488][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:26:03,839][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:26:03,846][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:26:03,859][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:26:03,894][Thread-33:77956][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:07,880][Thread-33:77956][basehttp.py:154]"GET /admin/task/ HTTP/1.1" 200 56190
+[INFO][2019-07-03 09:26:07,950][Thread-33:77956][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:26:07,964][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:26:07,976][Thread-32:77160][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:26:07,976][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:26:07,979][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:26:07,980][Thread-35:77272][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:07,982][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:26:07,987][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:26:07,995][Thread-32:77160][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:26:08,023][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:26:08,023][Thread-37:77488][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:26:08,273][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:26:08,353][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:26:08,368][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:26:08,396][Thread-36:72892][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:26:10,460][Thread-36:72892][basehttp.py:154]"GET /admin/task/taskqueuelistmodel/ HTTP/1.1" 200 50401
+[INFO][2019-07-03 09:26:10,548][Thread-36:72892][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 09:26:10,552][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 09:26:10,559][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 09:26:10,560][Thread-35:77272][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 09:26:10,575][Thread-37:77488][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 09:26:10,587][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 09:26:10,600][Thread-36:72892][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 09:26:10,611][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 09:26:10,611][Thread-34:74528][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:10,638][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:26:10,639][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 09:26:10,641][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 09:26:10,649][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:26:10,656][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 09:26:10,662][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:26:10,662][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:26:10,663][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:26:10,672][Thread-33:77956][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:26:10,684][Thread-34:74528][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:26:10,697][Thread-32:77160][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:10,700][Thread-33:77956][basehttp.py:154]"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO][2019-07-03 09:26:11,016][Thread-34:74528][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 09:26:11,019][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 09:26:11,032][Thread-32:77160][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 09:26:11,033][Thread-33:77956][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 09:26:13,064][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 09:26:13,064][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 09:26:13,069][Thread-33:77956][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 09:26:13,072][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 09:26:13,075][Thread-37:77488][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 09:26:13,078][Thread-35:77272][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 09:26:13,107][Thread-36:72892][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 09:26:13,140][Thread-34:74528][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 09:26:13,171][Thread-32:77160][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:11:43,717][Thread-38:48056][basehttp.py:154]"GET /admin/ HTTP/1.1" 200 79473
+[INFO][2019-07-03 11:11:43,819][Thread-39:54304][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:11:43,822][Thread-38:48056][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 304 0
+[INFO][2019-07-03 11:11:43,832][Thread-40:70360][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 304 0
+[INFO][2019-07-03 11:11:44,393][Thread-39:54304][basehttp.py:154]"GET /jet/dashboard/load_dashboard_module/5/ HTTP/1.1" 200 226
+[INFO][2019-07-03 11:11:46,588][Thread-39:54304][basehttp.py:154]"GET /admin/task/ HTTP/1.1" 200 56190
+[INFO][2019-07-03 11:11:46,657][Thread-39:54304][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:11:48,931][Thread-39:54304][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[ERROR][2019-07-03 11:11:51,409][Thread-39:54304][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 11:12:01,252][Thread-41:65472][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 11:12:01,460][Thread-41:65472][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-03 11:12:01,489][Thread-41:65472][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[ERROR][2019-07-03 11:13:43,982][Thread-43:45372][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 11:13:44,493][Thread-43:45372][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-03 11:13:44,503][Thread-43:45372][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[ERROR][2019-07-03 11:14:24,651][Thread-45:26732][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59
+[INFO][2019-07-03 11:14:25,167][Thread-45:26732][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-03 11:14:25,200][Thread-45:26732][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-03 11:14:45,996][Thread-47:50264][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 200 50506
+[INFO][2019-07-03 11:14:46,052][Thread-47:50264][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 11:14:46,069][Thread-47:50264][basehttp.py:154]"GET /static/admin/css/changelists.css HTTP/1.1" 200 0
+[INFO][2019-07-03 11:14:46,073][Thread-49:53924][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 11:14:46,076][Thread-47:50264][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:14:46,085][Thread-48:53160][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 11:14:46,131][Thread-52:57204][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 11:14:46,140][Thread-47:50264][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 11:14:46,148][Thread-47:50264][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 11:14:46,176][Thread-51:53480][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 11:14:46,179][Thread-51:53480][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 11:14:46,185][Thread-50:55580][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 11:14:46,204][Thread-47:50264][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 11:14:46,220][Thread-47:50264][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 11:14:46,233][Thread-51:53480][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 11:14:46,251][Thread-50:55580][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 11:14:46,259][Thread-49:53924][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 11:14:46,272][Thread-52:57204][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 11:14:46,292][Thread-48:53160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 11:14:46,292][Thread-47:50264][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 11:14:46,574][Thread-48:53160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 11:14:46,593][Thread-52:57204][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 11:14:46,615][Thread-47:50264][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 11:14:46,616][Thread-49:53924][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 11:14:46,779][Thread-49:53924][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-03 11:14:46,793][Thread-49:53924][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-03 11:14:48,335][Thread-49:53924][basehttp.py:154]"GET /admin/system/platformsettingmodel/1/change/ HTTP/1.1" 200 51032
+[INFO][2019-07-03 11:14:48,368][Thread-49:53924][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 11:14:48,392][Thread-49:53924][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 11:14:48,393][Thread-50:55580][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 11:14:48,394][Thread-48:53160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 11:14:48,400][Thread-47:50264][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 11:14:48,403][Thread-51:53480][basehttp.py:154]"GET /static/admin/css/forms.css HTTP/1.1" 200 0
+[INFO][2019-07-03 11:14:48,419][Thread-52:57204][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 11:14:48,435][Thread-50:55580][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 11:14:48,440][Thread-50:55580][basehttp.py:154]"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[INFO][2019-07-03 11:14:48,487][Thread-47:50264][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:14:48,488][Thread-49:53924][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 11:14:48,502][Thread-52:57204][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[INFO][2019-07-03 11:14:48,515][Thread-50:55580][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 11:14:48,520][Thread-47:50264][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 11:14:48,535][Thread-50:55580][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 11:14:48,536][Thread-49:53924][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 11:14:48,537][Thread-52:57204][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 11:14:48,543][Thread-50:55580][basehttp.py:154]"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[INFO][2019-07-03 11:14:48,559][Thread-47:50264][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 11:14:48,563][Thread-49:53924][basehttp.py:154]"GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[INFO][2019-07-03 11:14:48,575][Thread-48:53160][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 11:14:48,578][Thread-51:53480][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:14:48,975][Thread-48:53160][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 11:14:48,979][Thread-49:53924][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 11:14:48,995][Thread-51:53480][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 11:14:49,176][Thread-51:53480][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 11:14:51,232][Thread-51:53480][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:14:51,232][Thread-50:55580][basehttp.py:154]"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 0
+[INFO][2019-07-03 11:14:51,233][Thread-52:57204][basehttp.py:154]"GET /static/admin/js/actions.js HTTP/1.1" 200 6539
+[INFO][2019-07-03 11:14:51,233][Thread-47:50264][basehttp.py:154]"GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[INFO][2019-07-03 11:14:51,247][Thread-51:53480][basehttp.py:154]"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[INFO][2019-07-03 11:14:51,296][Thread-50:55580][basehttp.py:154]"GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[INFO][2019-07-03 11:14:51,299][Thread-49:53924][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 11:14:51,309][Thread-47:50264][basehttp.py:154]"GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[INFO][2019-07-03 11:14:51,312][Thread-51:53480][basehttp.py:154]"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[INFO][2019-07-03 11:14:51,316][Thread-48:53160][basehttp.py:154]"GET /admin/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:14:51,323][Thread-52:57204][basehttp.py:154]"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[INFO][2019-07-03 11:14:55,116][Thread-53:68236][basehttp.py:154]"GET /admin/system/ HTTP/1.1" 200 58133
+[INFO][2019-07-03 11:14:55,220][Thread-53:68236][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-03 11:14:55,233][Thread-55:72356][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-03 11:14:55,236][Thread-53:68236][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-03 11:14:55,240][Thread-54:68072][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-03 11:14:55,253][Thread-53:68236][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:14:55,253][Thread-55:72356][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-03 11:14:55,254][Thread-58:76696][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-03 11:14:55,255][Thread-57:76780][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-03 11:14:55,265][Thread-56:70260][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-03 11:14:55,283][Thread-54:68072][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-03 11:14:55,299][Thread-57:76780][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-03 11:14:55,663][Thread-57:76780][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-03 11:14:55,724][Thread-56:70260][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css.map HTTP/1.1" 200 22166
+[INFO][2019-07-03 11:14:55,727][Thread-54:68072][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css.map HTTP/1.1" 200 49792
+[INFO][2019-07-03 11:14:55,743][Thread-57:76780][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css.map HTTP/1.1" 200 308602
+[INFO][2019-07-03 11:15:00,295][Thread-57:76780][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-03 11:15:00,310][Thread-54:68072][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-04 07:58:29,320][MainThread:47564][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\dictionary\migrations\0001_initial.py changed, reloading.
+[INFO][2019-07-04 07:58:37,390][MainThread:79120][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-07-10 14:58:54,529][MainThread:11136][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-07-10 14:58:59,243][Thread-7:28168][basehttp.py:154]"GET / HTTP/1.1" 200 1063
+[INFO][2019-07-10 14:58:59,328][Thread-10:28376][basehttp.py:154]"GET /static/front/js/app.js HTTP/1.1" 200 8583
+[INFO][2019-07-10 14:58:59,336][Thread-8:26900][basehttp.py:154]"GET /static/front/js/manifest.js HTTP/1.1" 200 1412
+[INFO][2019-07-10 14:58:59,432][Thread-7:28168][basehttp.py:154]"GET /static/front/css/app.css HTTP/1.1" 200 235906
+[INFO][2019-07-10 14:58:59,467][Thread-9:5192][basehttp.py:154]"GET /static/front/js/vendor.js HTTP/1.1" 200 762254
+[INFO][2019-07-10 14:58:59,771][Thread-9:5192][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-10 14:58:59,811][Thread-9:5192][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-10 14:59:47,596][MainThread:25688][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-07-10 14:59:49,286][Thread-7:27772][basehttp.py:154]"GET / HTTP/1.1" 200 1063
+[INFO][2019-07-10 15:00:06,739][Thread-7:27772][basehttp.py:154]"GET /api/v1/statamazonskureviewrankday/ HTTP/1.1" 200 10607
+[INFO][2019-07-10 15:00:06,860][Thread-11:26152][basehttp.py:154]"GET /static/rest_framework/css/default.css HTTP/1.1" 200 1131
+[INFO][2019-07-10 15:00:06,878][Thread-9:28216][basehttp.py:154]"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+[INFO][2019-07-10 15:00:06,891][Thread-10:25220][basehttp.py:154]"GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+[INFO][2019-07-10 15:00:06,897][Thread-7:27772][basehttp.py:154]"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121200
+[INFO][2019-07-10 15:00:06,907][Thread-13:24656][basehttp.py:154]"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+[INFO][2019-07-10 15:00:06,916][Thread-10:25220][basehttp.py:154]"GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+[INFO][2019-07-10 15:00:06,924][Thread-7:27772][basehttp.py:154]"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+[INFO][2019-07-10 15:00:06,928][Thread-11:26152][basehttp.py:154]"GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1735
+[INFO][2019-07-10 15:00:06,961][Thread-9:28216][basehttp.py:154]"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 37045
+[INFO][2019-07-10 15:00:06,967][Thread-12:4196][basehttp.py:154]"GET /static/rest_framework/js/jquery-3.3.1.min.js HTTP/1.1" 200 86927
+[INFO][2019-07-10 15:00:07,067][Thread-12:4196][basehttp.py:154]"GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+[INFO][2019-07-10 16:05:56,910][MainThread:8428][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-07-10 16:47:12,615][Thread-18:26012][basehttp.py:154]"GET /chart HTTP/1.1" 301 0
+[INFO][2019-07-10 16:47:12,659][Thread-18:26012][basehttp.py:154]"GET /chart/ HTTP/1.1" 200 1063
+[INFO][2019-07-10 16:47:13,001][Thread-18:26012][basehttp.py:154]"GET /static/front/js/3.js HTTP/1.1" 200 1670
+[INFO][2019-07-10 16:47:13,017][Thread-20:9540][basehttp.py:154]"GET /static/front/js/5.js HTTP/1.1" 200 5871
+[INFO][2019-07-10 16:47:13,052][Thread-19:27728][basehttp.py:154]"GET /static/front/js/0.js HTTP/1.1" 200 819971
+[INFO][2019-07-10 16:47:13,171][Thread-19:27728][basehttp.py:154]"GET /static/front/js/2.js HTTP/1.1" 200 284778
+[INFO][2019-07-10 16:47:18,100][Thread-19:27728][basehttp.py:154]"GET /static/front/js/3.js HTTP/1.1" 200 1670
+[INFO][2019-07-10 16:47:18,129][Thread-18:26012][basehttp.py:154]"GET /static/front/js/5.js HTTP/1.1" 200 5871
+[INFO][2019-07-10 16:47:18,160][Thread-19:27728][basehttp.py:154]"GET /static/front/js/app.js HTTP/1.1" 200 8583
+[INFO][2019-07-10 16:47:18,177][Thread-18:26012][basehttp.py:154]"GET /static/front/js/manifest.js.map HTTP/1.1" 200 7658
+[INFO][2019-07-10 16:47:18,199][Thread-22:13036][basehttp.py:154]"GET /static/front/js/manifest.js HTTP/1.1" 200 1412
+[INFO][2019-07-10 16:47:18,246][Thread-21:24160][basehttp.py:154]"GET /static/front/js/2.js HTTP/1.1" 200 284778
+[INFO][2019-07-10 16:47:18,263][Thread-18:26012][basehttp.py:154]"GET /static/front/js/app.js.map HTTP/1.1" 200 30460
+[INFO][2019-07-10 16:47:18,275][Thread-21:24160][basehttp.py:154]"GET /static/front/js/5.js.map HTTP/1.1" 200 20611
+[INFO][2019-07-10 16:47:18,296][Thread-22:13036][basehttp.py:154]"GET /static/front/js/3.js.map HTTP/1.1" 200 10985
+[INFO][2019-07-10 16:47:18,325][Thread-20:9540][basehttp.py:154]"GET /static/front/js/0.js HTTP/1.1" 200 819971
+[INFO][2019-07-10 16:47:18,348][Thread-23:15500][basehttp.py:154]"GET /static/front/js/vendor.js HTTP/1.1" 200 762254
+[INFO][2019-07-10 16:47:19,383][Thread-22:13036][basehttp.py:154]"GET /static/front/css/app.css.map HTTP/1.1" 200 337423
+[INFO][2019-07-10 16:47:19,421][Thread-21:24160][basehttp.py:154]"GET /static/front/js/2.js.map HTTP/1.1" 200 872765
+[INFO][2019-07-10 16:47:20,993][Thread-19:27728][basehttp.py:154]"GET /static/front/js/vendor.js.map HTTP/1.1" 200 3034221
+[INFO][2019-07-10 16:47:24,452][Thread-18:26012][basehttp.py:154]"GET /static/front/js/0.js.map HTTP/1.1" 200 4507110
+[INFO][2019-07-10 16:48:21,539][Thread-18:26012][basehttp.py:154]"GET /chart/reportskuuv HTTP/1.1" 200 1063
+[INFO][2019-07-10 16:48:21,592][Thread-19:27728][basehttp.py:154]"GET /static/front/js/manifest.js HTTP/1.1" 200 1412
+[INFO][2019-07-10 16:48:21,631][Thread-18:26012][basehttp.py:154]"GET /static/front/css/app.css HTTP/1.1" 200 235906
+[INFO][2019-07-10 16:48:21,654][Thread-25:27564][basehttp.py:154]"GET /static/front/js/app.js HTTP/1.1" 200 8583
+[INFO][2019-07-10 16:48:21,836][Thread-24:14352][basehttp.py:154]"GET /static/front/js/vendor.js HTTP/1.1" 200 762254
+[INFO][2019-07-10 16:48:21,857][Thread-24:14352][basehttp.py:154]"GET /static/front/js/manifest.js.map HTTP/1.1" 200 7658
+[INFO][2019-07-10 16:48:21,936][Thread-24:14352][basehttp.py:154]"GET /static/front/css/app.css.map HTTP/1.1" 200 337423
+[INFO][2019-07-10 16:48:21,975][Thread-24:14352][basehttp.py:154]"GET /static/front/js/app.js.map HTTP/1.1" 200 30460
+[INFO][2019-07-10 16:48:22,042][Thread-24:14352][basehttp.py:154]"GET /static/front/js/3.js HTTP/1.1" 200 1670
+[INFO][2019-07-10 16:48:22,047][Thread-19:27728][basehttp.py:154]"GET /static/front/js/5.js HTTP/1.1" 200 5871
+[INFO][2019-07-10 16:48:22,147][Thread-18:26012][basehttp.py:154]"GET /static/front/js/0.js HTTP/1.1" 200 819971
+[INFO][2019-07-10 16:48:22,148][Thread-19:27728][basehttp.py:154]"GET /static/front/js/3.js.map HTTP/1.1" 200 10985
+[INFO][2019-07-10 16:48:22,151][Thread-24:14352][basehttp.py:154]"GET /static/front/js/5.js.map HTTP/1.1" 200 20611
+[INFO][2019-07-10 16:48:22,282][Thread-25:27564][basehttp.py:154]"GET /static/front/js/vendor.js.map HTTP/1.1" 200 3034221
+[INFO][2019-07-10 16:48:22,394][Thread-24:14352][basehttp.py:154]"GET /static/front/js/2.js HTTP/1.1" 200 284778
+[INFO][2019-07-10 16:48:22,846][Thread-25:27564][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-10 16:48:22,968][Thread-25:27564][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-10 16:48:22,992][Thread-24:14352][basehttp.py:154]"GET /static/front/js/2.js.map HTTP/1.1" 200 872765
+[INFO][2019-07-10 16:48:23,321][Thread-19:27728][basehttp.py:154]"GET /static/front/js/0.js.map HTTP/1.1" 200 4507110
+[INFO][2019-07-10 16:48:26,726][Thread-19:27728][basehttp.py:154]"GET /static/front/js/3.js HTTP/1.1" 200 1670
+[INFO][2019-07-10 16:48:26,773][Thread-18:26012][basehttp.py:154]"GET /static/front/js/manifest.js HTTP/1.1" 200 1412
+[INFO][2019-07-10 16:48:26,776][Thread-25:27564][basehttp.py:154]"GET /static/front/js/5.js HTTP/1.1" 200 5871
+[INFO][2019-07-10 16:48:26,817][Thread-19:27728][basehttp.py:154]"GET /static/front/js/2.js HTTP/1.1" 200 284778
+[INFO][2019-07-10 16:48:26,827][Thread-27:26312][basehttp.py:154]"GET /static/front/js/app.js HTTP/1.1" 200 8583
+[INFO][2019-07-10 16:48:26,865][Thread-24:14352][basehttp.py:154]"GET /static/front/js/0.js HTTP/1.1" 200 819971
+[INFO][2019-07-10 16:48:26,895][Thread-26:27744][basehttp.py:154]"GET /static/front/js/vendor.js HTTP/1.1" 200 762254
+[INFO][2019-07-10 16:49:09,832][Thread-28:27132][basehttp.py:154]"GET /admin HTTP/1.1" 301 0
+[INFO][2019-07-10 16:49:13,284][Thread-28:27132][basehttp.py:154]"GET /admin/ HTTP/1.1" 200 90422
+[INFO][2019-07-10 16:49:13,435][Thread-30:22596][basehttp.py:154]"GET /static/jet/css/icons/style.css?v=1.0.8 HTTP/1.1" 200 2248
+[INFO][2019-07-10 16:49:13,438][Thread-28:27132][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 200 385
+[INFO][2019-07-10 16:49:13,476][Thread-30:22596][basehttp.py:154]"GET /static/admin/css/dashboard.css HTTP/1.1" 200 0
+[INFO][2019-07-10 16:49:13,488][Thread-29:22616][basehttp.py:154]"GET /static/jet/css/vendor.css?v=1.0.8 HTTP/1.1" 200 53889
+[INFO][2019-07-10 16:49:13,492][Thread-33:8168][basehttp.py:154]"GET /static/jet/css/themes/light-blue/jquery-ui.theme.css?v=1.0.8 HTTP/1.1" 200 6769
+[INFO][2019-07-10 16:49:13,539][Thread-30:22596][basehttp.py:154]"GET /static/admin/js/vendor/jquery/jquery.min.js?v=1.0.8 HTTP/1.1" 200 86927
+[INFO][2019-07-10 16:49:13,540][Thread-29:22616][basehttp.py:154]"GET /static/admin/js/jquery.init.js?v=1.0.8 HTTP/1.1" 200 363
+[INFO][2019-07-10 16:49:13,556][Thread-32:26152][basehttp.py:154]"GET /static/jet/css/themes/light-blue/select2.theme.css?v=1.0.8 HTTP/1.1" 200 23571
+[INFO][2019-07-10 16:49:13,559][Thread-31:11736][basehttp.py:154]"GET /static/jet/css/themes/light-blue/base.css?v=1.0.8 HTTP/1.1" 200 178850
+[INFO][2019-07-10 16:49:13,606][Thread-28:27132][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-10 16:49:13,611][Thread-33:8168][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 200 417179
+[INFO][2019-07-10 16:49:13,908][Thread-28:27132][basehttp.py:154]"GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s HTTP/1.1" 200 6240
+[INFO][2019-07-10 16:49:13,976][Thread-33:8168][basehttp.py:154]"GET /jet/dashboard/load_dashboard_module/5/ HTTP/1.1" 200 226
+[INFO][2019-07-10 16:49:18,547][Thread-33:8168][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-10 16:49:28,115][Thread-33:8168][basehttp.py:154]"GET /admin/ HTTP/1.1" 200 90422
+[INFO][2019-07-10 16:49:28,184][Thread-33:8168][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-10 16:49:32,057][Thread-33:8168][basehttp.py:154]"GET /api/v1/statamazonsku/?page=1&size=500 HTTP/1.1" 200 10522
+[INFO][2019-07-10 16:49:43,423][Thread-34:23268][basehttp.py:154]"POST /api/v1/statamazonsku/?page=1&size=500 HTTP/1.1" 200 73
+[INFO][2019-07-10 16:51:09,444][Thread-34:23268][basehttp.py:154]"POST /api/v1/statamazonsku/?page=1&size=500 HTTP/1.1" 200 11331
+[INFO][2019-07-10 16:52:38,991][Thread-35:28468][basehttp.py:154]"OPTIONS /api/v1/statamazonsku/?page=1&size=500 HTTP/1.1" 200 0
+[INFO][2019-07-10 16:52:40,910][Thread-35:28468][basehttp.py:154]"POST /api/v1/statamazonsku/?page=1&size=500 HTTP/1.1" 200 112286
+[INFO][2019-07-10 16:52:53,894][Thread-34:23268][basehttp.py:154]"POST /api/v1/statamazonsku/?page=1&size=500 HTTP/1.1" 200 11331
+[INFO][2019-07-10 16:55:43,246][Thread-35:28468][basehttp.py:154]"OPTIONS /api/v1/statamazonskucompositereportday/ HTTP/1.1" 200 0
+[INFO][2019-07-10 16:55:43,593][Thread-35:28468][basehttp.py:154]"POST /api/v1/statamazonskucompositereportday/ HTTP/1.1" 200 245
+[INFO][2019-07-11 10:39:01,004][MainThread:25688][autoreload.py:203]F:\workspace\python\py_amazon_analysis\branches\v1\server\cronjob\admins\CronjobStateAdmin.py changed, reloading.
+[INFO][2019-07-11 10:39:14,862][MainThread:15984][autoreload.py:578]Watching for file changes with StatReloader
+[INFO][2019-07-11 11:03:44,039][Thread-8:23708][basehttp.py:154]"GET /api/v1/statamazonsku/?page=1&size=500 HTTP/1.1" 200 10522
+[INFO][2019-07-11 11:17:27,891][Thread-10:29668][basehttp.py:154]"GET / HTTP/1.1" 200 1063
+[INFO][2019-07-11 11:17:33,577][Thread-10:29668][basehttp.py:154]"GET /admin/ HTTP/1.1" 200 84367
+[INFO][2019-07-11 11:17:33,664][Thread-11:29456][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-11 11:17:34,142][Thread-10:29668][basehttp.py:154]"GET /admin/ HTTP/1.1" 200 84367
+[INFO][2019-07-11 11:17:34,631][Thread-10:29668][basehttp.py:154]"GET /jet/dashboard/load_dashboard_module/5/ HTTP/1.1" 200 226
+[INFO][2019-07-11 11:17:39,387][Thread-10:29668][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-11 11:18:11,907][Thread-12:5064][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 11:18:11,992][Thread-13:25324][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:01:01,155][Thread-14:17512][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:01:01,241][Thread-15:30356][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:02:10,288][Thread-16:4164][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:02:10,375][Thread-17:17480][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:03:07,343][Thread-18:23360][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:03:07,424][Thread-19:25876][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:04:49,607][Thread-20:30296][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:04:49,684][Thread-21:4404][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:09:48,815][Thread-22:29908][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:09:48,899][Thread-23:29080][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:10:36,047][Thread-24:28920][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:10:36,127][Thread-25:7648][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:27:33,680][Thread-26:24380][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:27:33,776][Thread-27:30696][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:30:12,630][Thread-28:17200][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:30:12,726][Thread-29:6476][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:32:32,210][Thread-30:30232][basehttp.py:154]"GET /admin/ HTTP/1.1" 200 84367
+[INFO][2019-07-11 13:32:32,296][Thread-31:24560][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-11 13:32:32,364][Thread-32:28260][basehttp.py:154]"GET /static/jet/js/build/bundle.min.js?v=1.0.8 HTTP/1.1" 304 0
+[INFO][2019-07-11 13:32:32,368][Thread-30:30232][basehttp.py:154]"GET /static/admin/css/base.css HTTP/1.1" 304 0
+[INFO][2019-07-11 13:32:32,788][Thread-30:30232][basehttp.py:154]"GET /jet/dashboard/load_dashboard_module/5/ HTTP/1.1" 200 226
+[INFO][2019-07-11 13:32:32,817][Thread-30:30232][basehttp.py:154]"GET /favicon.ico HTTP/1.1" 302 0
+[INFO][2019-07-11 13:32:32,859][Thread-30:30232][basehttp.py:154]"GET /static/images/favicon.ico HTTP/1.1" 200 1150
+[INFO][2019-07-11 13:32:37,419][Thread-30:30232][basehttp.py:154]"GET /jet/jsi18n/ HTTP/1.1" 200 7722
+[INFO][2019-07-11 13:38:39,672][Thread-33:30544][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:38:39,751][Thread-34:28028][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:39:01,332][Thread-35:18044][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:39:01,414][Thread-36:16280][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:44:34,408][Thread-37:31492][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:44:34,523][Thread-38:31528][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225
+[INFO][2019-07-11 13:45:11,911][Thread-39:31236][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 200 116
+[INFO][2019-07-11 13:45:11,987][Thread-40:31472][basehttp.py:154]"POST /api/v1/userprofile HTTP/1.1" 200 225

@@ -1,0 +1,3 @@
+INSERT INTO "pub_sku_keyword"("id", "created_at", "updated_at", "creator_id", "status", "sort", "platform", "platform_id", "title") VALUES (4, '2019-07-12 18:33:15.68104+10', '2019-07-12 18:33:15.681067+10', 1, 1, 0, 'amazon', 1, '床垫');
+INSERT INTO "pub_sku_keyword"("id", "created_at", "updated_at", "creator_id", "status", "sort", "platform", "platform_id", "title") VALUES (5, '2019-07-12 18:33:24.234637+10', '2019-07-12 18:33:24.234664+10', 1, 1, 0, 'amazon', 1, '吸尘器');
+INSERT INTO "pub_sku_keyword"("id", "created_at", "updated_at", "creator_id", "status", "sort", "platform", "platform_id", "title") VALUES (6, '2019-07-12 18:33:30.480338+10', '2019-07-12 18:33:30.480366+10', 1, 1, 0, 'amazon', 1, '家具');

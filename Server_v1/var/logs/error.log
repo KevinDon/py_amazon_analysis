@@ -1,0 +1,361 @@
+[ERROR][2019-06-27 14:00:41,703][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/statamazonsku/
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 483, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 400, in initial
+    self.perform_authentication(request)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 326, in perform_authentication
+    request.user
+  File "F:\Python\lib\site-packages\rest_framework\request.py", line 223, in user
+    self._authenticate()
+  File "F:\Python\lib\site-packages\rest_framework\request.py", line 376, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "F:\Python\lib\site-packages\rest_framework\authentication.py", line 192, in authenticate
+    return self.authenticate_credentials(token)
+  File "F:\Python\lib\site-packages\rest_framework\authentication.py", line 197, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:00:41,708][Thread-2:16120][basehttp.py:154]"POST /api/v1/statamazonsku/ HTTP/1.1" 500 179452
+[ERROR][2019-06-27 14:00:50,424][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/apitokenauth
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\UserView.py", line 27, in post
+    token, created = Token.objects.get_or_create(user=user)
+  File "F:\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
+    return self.get(**lookup), False
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:00:50,444][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 500 164651
+[ERROR][2019-06-27 14:01:48,951][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/apitokenauth
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\UserView.py", line 27, in post
+    token, created = Token.objects.get_or_create(user=user)
+  File "F:\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
+    return self.get(**lookup), False
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:01:48,956][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 500 164812
+[ERROR][2019-06-27 14:02:12,241][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/apitokenauth
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\UserView.py", line 27, in post
+    token, created = Token.objects.get_or_create(user=user)
+  File "F:\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
+    return self.get(**lookup), False
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:02:12,246][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 500 164804
+[ERROR][2019-06-27 14:03:41,289][Thread-2:16120][log.py:228]Internal Server Error: /api/v1/apitokenauth
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\view\UserView.py", line 27, in post
+    token, created = Token.objects.get_or_create(user=user)
+  File "F:\Python\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 486, in get_or_create
+    return self.get(**lookup), False
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\Python\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\Python\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\Python\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column auth_token.creator_id does not exist
+LINE 1: ...h_token"."created_at", "auth_token"."updated_at", "auth_toke...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\Python\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "F:\Python\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Python\lib\site-packages\rest_framework\views.py", line 452, in handle_exception
+    response = exception_handler(exc, context)
+  File "F:\workspace\python\py_amazon_analysis\branches\v1\server\api\views.py", line 23, in api_exception_handler
+    return Response(qf.unsuccessful(msg=exc.default_code, status=exc.status_code))
+AttributeError: 'ProgrammingError' object has no attribute 'default_code'
+[ERROR][2019-06-27 14:03:41,292][Thread-2:16120][basehttp.py:154]"POST /api/v1/apitokenauth HTTP/1.1" 500 164671
+[ERROR][2019-07-03 08:43:14,851][Thread-3:52964][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:43:53,269][Thread-3:52964][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:44:10,552][Thread-4:52932][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:48:45,444][Thread-4:52932][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:48:46,830][Thread-4:52932][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:48:51,566][Thread-6:47540][basehttp.py:154]"GET /admin/dictionary/datadictionarycategorymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:48:54,662][Thread-7:55096][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:48:55,759][Thread-7:55096][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:49:11,020][Thread-2:52952][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 08:50:23,222][Thread-2:52952][basehttp.py:154]"GET /admin/dictionary/datadictionarymodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 09:14:23,279][Thread-28:51420][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 11:11:51,409][Thread-39:54304][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 11:12:01,252][Thread-41:65472][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 11:13:43,982][Thread-43:45372][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59
+[ERROR][2019-07-03 11:14:24,651][Thread-45:26732][basehttp.py:154]"GET /admin/system/platformsettingmodel/ HTTP/1.1" 500 59

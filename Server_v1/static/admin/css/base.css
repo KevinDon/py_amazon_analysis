@@ -1,0 +1,18 @@
+
+.user-tools ul li.user-tools-language {
+   display: none;
+   background: none;
+}
+.user-tools ul li.user-tools-language span.select2 {
+    left: 8px;
+    margin: 0;
+    padding-bottom: 8px;
+}
+
+.user-tools ul li.user-tools-language span.select2-selection__rendered{
+    line-height: 27px;
+}
+
+.user-tools:hover ul li.user-tools-language{
+    display: block !important;
+}
