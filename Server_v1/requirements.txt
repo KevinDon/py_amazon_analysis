@@ -9,7 +9,7 @@ django-filter==2.1.0
 django-jet==1.0.8
 django-qrcode==0.3
 django-rest-swagger==2.2.0
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 google-api-python-client==1.4.1
 httplib2==0.12.3
 idna==2.8
